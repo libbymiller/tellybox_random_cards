@@ -5,15 +5,16 @@
 
 import os
 import sys
+import subprocess
 from PIL import Image
 from random import randint
 
-num_cards = 179
+num_cards = 199
 
 prefix = "images"
 folder="images"
 
-# get random form each bucket
+# get random from each bucket
 # in this case the middle set is some joining words
 
 file1_int = randint(15,int(num_cards/2))
@@ -41,15 +42,14 @@ for im in images:
   new_im.paste(im, (x_offset,0))
   x_offset += im.size[0]
 
-# save the new image
-
-fn = prefix+'_three.jpg'
-new_im.save(fn)
 
 # save the generated image
 
+fn = prefix+'_three.jpg'
 print "saving new image - "+fn
+new_im.save(fn)
 
 # open in the system image viewer
 
-os.system("open "+fn)
+#os.system("open "+fn)
+subprocess.call(['open','-a','Preview',fn])

@@ -10,5 +10,6 @@ trello-based random card generator in python
 # run
 
     curl https://trello.com/b/1MTFi3G4.json > trello.json
-    parse_trello.py
-    three_random_cards.py        
+    mkdir images
+    python parse_trello.py
+    python three_random_cards.py        
